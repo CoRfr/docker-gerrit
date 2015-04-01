@@ -24,7 +24,7 @@ RUN chown ${GERRIT_USER}:${GERRIT_USER} $GERRIT_HOME
 
 RUN mkdir -p /var/log/supervisor
 
-ADD http://gerrit-releases.storage.googleapis.com/gerrit-2.9.3.war $GERRIT_WAR
+ADD http://gerrit-releases.storage.googleapis.com/gerrit-2.10.2.war $GERRIT_WAR
 ADD gerrit/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 RUN chown -R ${GERRIT_USER}:${GERRIT_USER} $GERRIT_HOME
