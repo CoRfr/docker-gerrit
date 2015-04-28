@@ -1,8 +1,8 @@
 # gerrit
 #
-# VERSION               0.0.4
+# VERSION               0.0.5
 
-FROM ubuntu:14.10
+FROM ubuntu:15.04
 
 MAINTAINER <niknyby@riseup.net>
 
@@ -18,7 +18,7 @@ RUN \
   DEBIAN_FRONTEND=noninteractive apt-get -y upgrade && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y sudo vim-tiny git && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y supervisor && \
-  DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-7-jre-headless
+  DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-8-jre-headless
 
 RUN useradd -m $GERRIT_USER
 RUN mkdir -p $GERRIT_HOME
@@ -26,7 +26,7 @@ RUN chown ${GERRIT_USER}:${GERRIT_USER} $GERRIT_HOME
 
 RUN mkdir -p /var/log/supervisor
 
-ADD http://gerrit-releases.storage.googleapis.com/gerrit-${GERRIT_VERSION}.war $GERRIT_WAR
+ADD https://gerrit-releases.storage.googleapis.com/gerrit-${GERRIT_VERSION}.war $GERRIT_WAR
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 RUN chown -R ${GERRIT_USER}:${GERRIT_USER} $GERRIT_HOME
