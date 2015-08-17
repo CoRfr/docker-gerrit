@@ -1,6 +1,6 @@
 # gerrit
 #
-# VERSION               0.0.5
+# VERSION               0.0.6
 
 FROM ubuntu:15.04
 
@@ -10,7 +10,7 @@ ENV GERRIT_HOME /home/gerrit
 ENV GERRIT_ROOT /home/gerrit/gerrit
 ENV GERRIT_USER gerrit
 ENV GERRIT_WAR /home/gerrit/gerrit.war
-ENV GERRIT_VERSION 2.11
+ENV GERRIT_VERSION 2.11.2
 
 RUN \
   sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
