@@ -9,6 +9,8 @@ ENV GERRIT_ROOT /home/gerrit/gerrit
 ENV GERRIT_USER gerrit
 ENV GERRIT_WAR /home/gerrit/gerrit.war
 
+ENV GERRIT_VERSION 2.11.3
+
 RUN \
   sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
   apt-get update && \
@@ -24,7 +26,7 @@ RUN chown ${GERRIT_USER}:${GERRIT_USER} $GERRIT_HOME
 
 RUN mkdir -p /var/log/supervisor
 
-ADD http://gerrit-releases.storage.googleapis.com/gerrit-2.11.1.war $GERRIT_WAR
+ADD http://gerrit-releases.storage.googleapis.com/gerrit-${GERRIT_VERSION}.war ${GERRIT_WAR}
 ADD gerrit/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 RUN chown -R ${GERRIT_USER}:${GERRIT_USER} $GERRIT_HOME
