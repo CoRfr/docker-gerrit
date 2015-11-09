@@ -1,8 +1,8 @@
 # gerrit
 #
-# VERSION               0.0.7
+# VERSION               0.0.8
 
-FROM ubuntu:15.04
+FROM ubuntu:15.10
 
 MAINTAINER <niknyby@riseup.net>
 
