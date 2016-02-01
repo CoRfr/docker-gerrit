@@ -9,7 +9,7 @@ ENV GERRIT_ROOT /home/gerrit/gerrit
 ENV GERRIT_USER gerrit
 ENV GERRIT_WAR /home/gerrit/gerrit.war
 
-ENV GERRIT_VERSION 2.11.3
+ENV GERRIT_VERSION 2.11.5
 
 RUN \
   sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
