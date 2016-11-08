@@ -1,12 +1,12 @@
 docker-gerrit
 =============
 
-Build a Docker container with the gerrit code review system
+A Docker container for the Gerrit code review system.
 
-To build the image:
+    $ docker pull nikolas/gerrit
+    $ docker run -P -d -t nikolas/gerrit
 
-    ./build
+Or, if you've cloned this repository, you can build it with `./build`, and
+run it with `./run`. For an externally accessible instance, do:
 
-To run it:
-
-    ./run
+    $ docker run -p 0.0.0.0:8080:8080 -p 127.0.0.1:29418:29418 nikolas/gerrit
