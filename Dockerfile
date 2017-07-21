@@ -1,5 +1,3 @@
-# gerrit
-
 FROM debian:latest
 
 MAINTAINER Bertrand Roussel <broussel@sierrawireless.com>
@@ -16,7 +14,7 @@ RUN \
       DEBIAN_FRONTEND=noninteractive apt-get -y upgrade && \
       DEBIAN_FRONTEND=noninteractive apt-get install -y sudo vim-tiny git && \
       DEBIAN_FRONTEND=noninteractive apt-get install -y supervisor && \
-      DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-7-jre-headless && \
+      DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-8-jre-headless && \
       DEBIAN_FRONTEND=noninteractive apt-get install -y procps
 
 RUN useradd -m $GERRIT_USER
